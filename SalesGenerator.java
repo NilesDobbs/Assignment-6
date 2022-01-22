@@ -14,7 +14,8 @@ public class SalesGenerator {
 		
 		//This comparator will sort the sales array values.
 		Comparator<TeslaImport> comparativeOperator = Comparator.comparing(tesla -> tesla.getSales());
-
+		
+		//This will layout the year in ascdending order and sum of the sales data for each year.
 		entrySet.stream().sorted(Entry.comparingByKey()).forEach(entry -> System.out.println("Month: " + entry.getKey() + " -> " + entry
 	    .getValue().stream().mapToInt(tesla -> tesla.getSales().intValue()).sum()));
 		
